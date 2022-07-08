@@ -1,7 +1,5 @@
 FROM summerwind/actions-runner:v2.291.1-ubuntu-20.04-3ca1152
 
-LABEL org.opencontainers.image.source https://github.com/liatrio/builder-images
-
 USER root
 WORKDIR /usr/workspace
 
