@@ -25,7 +25,7 @@ RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
 
 # Go is needed to run terraform tests via terratest
 ENV PATH="${PATH}:/usr/local/go/bin"
-ENV GO_VERSION="1.18.2"
+ENV GO_VERSION="1.18.4"
 RUN curl -LO https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
     rm go${GO_VERSION}.linux-amd64.tar.gz && \
@@ -38,7 +38,7 @@ RUN curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terra
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     terraform -version
 
-ENV TERRAGRUNT_VERSION="0.38.4"
+ENV TERRAGRUNT_VERSION="0.38.5"
 RUN curl -LO https://github.com/gruntwork-io/terragrunt/releases/download/v${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 && \
     chmod +x ./terragrunt_linux_amd64 && \
     mv ./terragrunt_linux_amd64 /usr/local/bin/terragrunt && \
