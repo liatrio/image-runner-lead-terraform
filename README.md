@@ -1,40 +1,10 @@
-Repo for image-runner-lead-terraform
-
 ## What is the image for?
-The intended purpose of this image is for it to be used as a Jenkins agent. By using the installed features the user is able to create Jenkins pipelines that can trigger Terraform scripts to deploy and update infrastructure. Additionally, Terragrunt gives the ability to use extra tools for Terraform. An example of using this image as a Jenkins agent via [Kubernetes](https://plugins.jenkins.io/kubernetes/) can be seen below. 
+The intended purpose of this image is for it to be used as a Github runner with extra dependencies installed for use in Terraform pipelines. 
 
-First, an example of configuring the pod template in yaml to create the agent.
-
-```yaml
-jenkins:
-  clouds:
-    - kubernetes:
-        name: "kubernetes"
-        templates:
-          - name: "image-builder-terraform"
-            label: "image-builder-terraform"
-            nodeUsageMode: NORMAL
-            containers:
-              - name: "image-terraform"
-                image: "ghcr.io/liatrio/image-builder-terraform:${builder_images_version}"
-```
-And then specifying the agent in the Jenkinsfile for an example step.
-
-```jenkins
-stage('Build') {
-  agent {
-    label "image-builder-terraform"
-  }
-  steps {
-    container('image-terraform') {
-      sh "terragrunt plan"
-      sh "terragrunt apply"
-    }
-  }
-}
-```
+> **_NOTE:_** For more information on using self-hosted runners in GitHub Actions workflows, read the [GitHub docs](https://docs.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners) on the topic.
 
 ## What is installed on this image?
+- The GitHub Actions Runner [Base Image](https://hub.docker.com/r/summerwind/actions-runner/tags) 
 - The [AWS CLI](https://aws.amazon.com/cli/)
 - The [Azure CLI](https://packages.microsoft.com/repos/azure-cli/)
 - Version [1.18.X](https://dl.google.com/go/go1.18.src.tar.gz) of the Go programming language
