@@ -58,7 +58,6 @@ RUN curl -LO https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubec
 
 ENV TERRAFORM_COMPLIANCE_VERSION="1.3.33"
 RUN pip install terraform-compliance==v${TERRAFORM_COMPLIANCE_VERSION} && \
-    chmod +x /usr/local/bin/terraform-compliance && \
     terraform-compliance --version
 
 USER runner
