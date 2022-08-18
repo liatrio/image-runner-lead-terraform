@@ -1,4 +1,4 @@
-FROM summerwind/actions-runner:v2.291.1-ubuntu-20.04-3ca1152 
+FROM summerwind/actions-runner:v2.291.1-ubuntu-20.04-3ca1152
 
 USER root
 WORKDIR /usr/workspace
