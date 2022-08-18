@@ -1,4 +1,4 @@
-FROM summerwind/actions-runner:v2.291.1-ubuntu-20.04-3ca1152
+FROM summerwind/actions-runner:v2.291.1-ubuntu-20.04-3ca1152 
 
 USER root
 WORKDIR /usr/workspace
@@ -55,5 +55,10 @@ RUN curl -LO https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubec
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin && \
     kubectl version --client
+
+ENV TERRAFORM_COMPLIANCE_VERSION="1.3.33"
+RUN pip install terraform-compliance==v${TERRAFORM_COMPLIANCE_VERSION} && \
+    chmod +x /usr/local/bin/terraform-compliance && \
+    terraform-compliance --version
 
 USER runner
