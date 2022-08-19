@@ -9,7 +9,7 @@ The intended purpose of this image is for it to be used as a Github runner with 
 - The [Azure CLI](https://packages.microsoft.com/repos/azure-cli/)
 - Version [1.18.X](https://dl.google.com/go/go1.18.src.tar.gz) of the Go programming language
 - Version [1.2.5](https://releases.hashicorp.com/terraform/1.2.5/) of infrastructure as code tool Terraform
-- Version [1.3.33](https://terraform-compliance.com/) of a security and compliance focused test framework tool against terraform 
+- Version [1.3.33](https://terraform-compliance.com/) of Terraform-compliance a security and compliance focused test framework tool against terraform 
 - Version [0.38.X](https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.4/terragrunt_linux_amd64) of Terraform wrapper Terragrunt 
 - Version [0.10.X](https://github.com/loft-sh/vcluster/releases/download/v0.10.2/vcluster-linux-amd64) of vcluster, a tool for creating virtual Kubernetes clusters
 - Version [1.24.X](https://storage.googleapis.com/kubernetes-release/release/v1.24.0/bin/linux/amd64/kubectl) of kubectl, a command-line tool that allows you to run commands against Kubernetes clusters
