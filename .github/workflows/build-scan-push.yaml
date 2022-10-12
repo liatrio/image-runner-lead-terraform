@@ -38,6 +38,6 @@ jobs:
       tag: ${{ needs.release.outputs.newVersion }}
       image-name: ${{ github.event.repository.name }}
       nofail: true
-      timeout: 6m
+      timeout: 10m
     secrets:
       registry-password: ${{ secrets.GITHUB_TOKEN }}
